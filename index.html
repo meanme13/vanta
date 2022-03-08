@@ -281,7 +281,7 @@
                     // swipe left
                     if (count === 0) {
                         mid.style.left = '-100%';
-                        rightVr.style.right = '100%';
+                        rightVr.style.left = '0';
                         count += 1;
                     } else if (count === -1) {
                         leftAr.style.left = '-100%';
@@ -295,7 +295,7 @@
                         leftAr.style.left = '0';
                         count -= 1;
                     } else if (count === 1) {
-                        rightVr.style.right = '-100%';
+                        rightVr.style.left = '100%';
                         mid.style.left = '0';
                         count -= 1;
                     }
