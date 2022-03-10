@@ -6,6 +6,7 @@
     <title>Metagate to...</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg">
 
     <meta property="og:title" content="">
     <meta property="og:type" content="">
@@ -41,7 +42,7 @@
             overflow: hidden;
         }
         .second {
-            background-color: #000000;
+            background-color: #FFFFFF;
         }
         .to {
             display: flex;
@@ -88,10 +89,18 @@
             transition: 400ms;
             display: flex;
             justify-content: center;
+            align-content: center;
+            overflow: hidden;
         }
         .model-container {
-            width: auto;
-            height: 80vh;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .model1 {
+            width: 100%;
+            height: auto;
         }
         .ar-vr {
             display: flex;
@@ -166,6 +175,9 @@
             span {
                 margin-left: 2%;
             }
+            .model-container {
+                flex-direction: column;
+            }
         }
         @media screen and (max-width: 480px) {
             .meta, .to, .ar, .vr {
@@ -221,7 +233,36 @@
 
         <div id="leftAr" class="second left-ar">
             <div class="model-container">
-                <aci-viewer contentId="i1Z_yL93"></aci-viewer>
+                <div class="model1">
+                    <aci-viewer name="model_1" contentId="i1Z_yL93"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_2" contentId="wQz7yqJt"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_3" contentId="8-MAnviw"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_4" contentId="3_LDBYpZ"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_5" contentId="YfWPrV5e"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_6" contentId="Nesa7CHe"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_7" contentId="5zqvPxZA"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_8" contentId="LCpfarFm"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_9" contentId="IlXIE2zb"></aci-viewer>
+                </div>
+                <div class="model1">
+                    <aci-viewer name="model_10" contentId="GXPIvRoo"></aci-viewer>
+                </div>
             </div>
         </div>
 
