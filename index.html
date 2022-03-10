@@ -86,6 +86,12 @@
             height: 100vh;
             z-index: 3;
             transition: 400ms;
+            display: flex;
+            justify-content: center;
+        }
+        .model-container {
+            width: auto;
+            height: 80vh;
         }
         .ar-vr {
             display: flex;
@@ -214,7 +220,9 @@
     <div id="first" class="first">
 
         <div id="leftAr" class="second left-ar">
-            <aci-viewer contentId="i1Z_yL93"></aci-viewer>
+            <div class="model-container">
+                <aci-viewer contentId="i1Z_yL93"></aci-viewer>
+            </div>
         </div>
 
         <div id="mid" class="first">
