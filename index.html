@@ -205,6 +205,8 @@
             minWidth: 180.00
         })
     </script>
+<!--    <aci-viewer contentId="i1Z_yL93"></aci-viewer>-->
+    <script type="module" src="https://app.arhead.io/js/aci-viewer.js"></script>
 
 </head>
 
@@ -213,17 +215,17 @@
     <div id="first" class="first">
 
         <div id="leftAr" class="second left-ar">
-            <p class="meta">AR HERE</p>
+            <p class="meta"><aci-viewer contentId="i1Z_yL93"></aci-viewer></p>
         </div>
 
         <div id="mid" class="first">
             <p id="meta" class="meta">Metagate</p>
             <div id="ar_vr" class="ar-vr">
-                <div>
+                <div id="goLeft">
                     <img class="left-arrow" src="./arrow.svg" alt="left arrow">
                     <p class="ar">AR</p>
                 </div>
-                <div>
+                <div id="goRight">
                     <p class="vr">VR</p>
                     <img class="right-arrow" src="./arrow.svg" alt="right arrow">
                 </div>
@@ -246,70 +248,86 @@
 
     <script>
 
-        const first = document.getElementById('first');
         const leftAr = document.getElementById('leftAr');
         const rightVr = document.getElementById('rightVr');
         const mid = document.getElementById('mid');
-        var count = 0;
+        const goLeft = document.getElementById('goLeft');
+        const goRight = document.getElementById('goRight');
 
-        first.addEventListener('touchstart', handleTouchStart, false);
-        first.addEventListener('touchmove', handleTouchMove, false);
+        goLeft.addEventListener('click', () => {
+            mid.style.left = '100%';
+            leftAr.style.left = '0';
+        });
 
-        function getTouches(e) {
-            return e.touches || e.originalEvent.touches;
-        }
+        goRight.addEventListener('click', () => {
+            mid.style.left = '-100%';
+            rightVr.style.left = '0';
+        });
 
-        function handleTouchStart(e) {
-            const firstTouch = getTouches(e)[0];
-            xDown = firstTouch.clientX;
-            yDown = firstTouch.clientY;
-        }
+        // const first = document.getElementById('first');
+        // const leftAr = document.getElementById('leftAr');
+        // const rightVr = document.getElementById('rightVr');
+        // const mid = document.getElementById('mid');
+        // var count = 0;
 
-        function handleTouchMove(e) {
-            if (!xDown || !yDown) {
-                return;
-            }
-
-            var xUp = e.touches[0].clientX;
-            var yUp = e.touches[0].clientY;
-
-            var xDiff = xDown - xUp;
-            var yDiff = yDown - yUp;
-
-            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-                if (xDiff > 0) {
-                    // swipe left
-                    if (count === 0) {
-                        mid.style.left = '-100%';
-                        rightVr.style.left = '0';
-                        count += 1;
-                    } else if (count === -1) {
-                        leftAr.style.left = '-100%';
-                        mid.style.left = '0';
-                        count += 1;
-                    }
-                } else {
-                    // swipe right
-                    if (count === 0) {
-                        mid.style.left = '-100%';
-                        leftAr.style.left = '0';
-                        count -= 1;
-                    } else if (count === 1) {
-                        rightVr.style.left = '100%';
-                        mid.style.left = '0';
-                        count -= 1;
-                    }
-                }
-            } else {
-                if ( yDiff > 0 ) {
-                    // swipe up
-                } else {
-                    // swipe down
-                }
-            }
-            xDown = null;
-            yDown = null;
-        }
+        // first.addEventListener('touchstart', handleTouchStart, false);
+        // first.addEventListener('touchmove', handleTouchMove, false);
+        //
+        // function getTouches(e) {
+        //     return e.touches || e.originalEvent.touches;
+        // }
+        //
+        // function handleTouchStart(e) {
+        //     const firstTouch = getTouches(e)[0];
+        //     xDown = firstTouch.clientX;
+        //     yDown = firstTouch.clientY;
+        // }
+        //
+        // function handleTouchMove(e) {
+        //     if (!xDown || !yDown) {
+        //         return;
+        //     }
+        //
+        //     var xUp = e.touches[0].clientX;
+        //     var yUp = e.touches[0].clientY;
+        //
+        //     var xDiff = xDown - xUp;
+        //     var yDiff = yDown - yUp;
+        //
+        //     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+        //         if (xDiff > 0) {
+        //             // swipe left
+        //             if (count === 0) {
+        //                 mid.style.left = '-100%';
+        //                 rightVr.style.left = '0';
+        //                 count += 1;
+        //             } else if (count === -1) {
+        //                 leftAr.style.left = '-100%';
+        //                 mid.style.left = '0';
+        //                 count += 1;
+        //             }
+        //         } else {
+        //             // swipe right
+        //             if (count === 0) {
+        //                 mid.style.left = '-100%';
+        //                 leftAr.style.left = '0';
+        //                 count -= 1;
+        //             } else if (count === 1) {
+        //                 rightVr.style.left = '100%';
+        //                 mid.style.left = '0';
+        //                 count -= 1;
+        //             }
+        //         }
+        //     } else {
+        //         if ( yDiff > 0 ) {
+        //             // swipe up
+        //         } else {
+        //             // swipe down
+        //         }
+        //     }
+        //     xDown = null;
+        //     yDown = null;
+        // }
 
     </script>
 
