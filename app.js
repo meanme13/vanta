@@ -3,15 +3,35 @@ const rightVr = document.getElementById('right');
 const mid = document.getElementById('mid');
 const goLeft = document.getElementById('goLeft');
 const goRight = document.getElementById('goRight');
+const backRight = document.getElementById('backRight');
+const nav = document.getElementById('nav');
+
+window.addEventListener('scroll', () => {
+   let y = window.scrollY;
+   if (y >= 300) {
+       nav.style.top = '0';
+   } else {
+       nav.style.top = '-10%';
+   }
+});
+
+backRight.addEventListener('click', () => {
+   mid.style.left = '0';
+   leftAr.style.left = '-150%';
+   rightVr.style.left = '150%';
+   backRight.classList.toggle('d-none');
+});
 
 goLeft.addEventListener('click', () => {
     mid.style.left = '100%';
     leftAr.style.left = '0';
+    backRight.classList.toggle('d-none');
 });
 
 goRight.addEventListener('click', () => {
     mid.style.left = '-100%';
     rightVr.style.left = '0';
+    backRight.classList.toggle('d-none');
 });
 
 // const first = document.getElementById('first');

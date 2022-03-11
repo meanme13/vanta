@@ -3,14 +3,87 @@ body {
     background-color: #000000;
 }
 
+/*navigation*/
+nav {
+    position: fixed;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: #000000;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: .9;
+    transition: .5s;
+}
+
+.show {
+    animation-name: show;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+.hide {
+    animation-name: hide;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@keyframes show {
+    to {
+        top: 0;
+    }
+}
+@keyframes hide {
+    to {
+        top: -10%;
+    }
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 12%;
+    height: 85%;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: "Arial", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.backRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 12%;
+    height: 85%;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: "Arial", sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition: .5s;
+}
+.d-none {
+    display: none;
+}
+
 /*AR block*/
 .left {
     position: absolute;
     top: 0;
-    left: -100%;
+    left: -150%;
     width: 100%;
     height: 100vh;
-    background-color: #000000;
+    background-color: #FFFFFF;
     transition: .5s;
     z-index: 3;
 }
@@ -19,8 +92,7 @@ body {
     width: 100%;
     height: 100vh;
     padding-bottom: 10%;
-    background-color: #000000;
-    border-bottom: 1px solid #FFFFFF;
+    background-color: #FFFFFF;
 }
 
 /*middle block*/
@@ -42,12 +114,19 @@ body {
 }
 
 .first {
-    justify-content: space-around;
+    justify-content: space-between;
     overflow: hidden;
+}
+
+.to-wow {
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
 }
 
 .second {
     background-color: #000000;
+    overflow-x: hidden;
 }
 
 .to {
@@ -55,6 +134,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 .meta, .to, .ar, .vr {
     text-align: center;
     font-family: "Arial", sans-serif;
@@ -64,6 +144,7 @@ body {
     padding: 0;
     margin: 0;
 }
+
 .down-arrow {
     width: 8%;
     animation-name: down-arrow;
@@ -73,9 +154,7 @@ body {
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-span {
-    margin-left: 1%;
-}
+
 .right-vr {
     position: absolute;
     top: 0;
@@ -85,6 +164,7 @@ span {
     z-index: 2;
     transition: 400ms;
 }
+
 .left-ar {
     position: absolute;
     top: 0;
@@ -98,16 +178,25 @@ span {
     align-content: center;
     overflow: hidden;
 }
+
 .ar-vr {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
+
+.arrows-btn {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
 .left-arrow {
     width: 80%;
     position: absolute;
     top: 40%;
-    left: -60%;
+    left: 0;
     transform: rotateZ(90deg);
     animation-name: left-arrow;
     animation-duration: .9s;
@@ -120,7 +209,7 @@ span {
     position: absolute;
     width: 80%;
     top: 40%;
-    right: -60%;
+    right: 0;
     transform: rotateZ(-90deg);
     animation-name: right-arrow;
     animation-duration: .9s;
@@ -133,15 +222,12 @@ span {
     display: flex;
     position: relative;
 }
-#goLeft, #goRight {
-    cursor: pointer;
-}
 
 /*VR block*/
 .right {
     position: absolute;
     top: 0;
-    left: 100%;
+    left: 150%;
     width: 100%;
     height: 100vh;
     background-color: #000000;
@@ -156,34 +242,29 @@ span {
 }
 @keyframes right-arrow {
     to {
-        right: -80%;
+        right: -40%;
     }
 }
 @keyframes left-arrow {
     to {
-        left: -80%;
+        left: -40%;
     }
 }
 
 
-@media screen and (max-width: 1000px) {
-    .ar-vr {
-        justify-content: space-evenly;
-    }
-}
 @media screen and (max-width: 768px) {
     .meta, .to, .ar, .vr {
         font-size: 70px;
         letter-spacing: 15px;
+    }
+    .to-wow {
+        font-size: 50px;
     }
     .down-arrow {
         width: 12%;
     }
     .left-arrow, .right-arrow {
         width: 70%;
-    }
-    span {
-        margin-left: 2%;
     }
     .model-container {
         flex-direction: column;
@@ -194,14 +275,14 @@ span {
         font-size: 50px;
         letter-spacing: 10px;
     }
+    .to-wow {
+        font-size: 40px;
+    }
     .down-arrow {
         width: 14%;
     }
     .left-arrow, .right-arrow {
         width: 70%;
-    }
-    span {
-        margin-left: 3%;
     }
 }
 @media screen and (max-width: 360px) {
@@ -209,13 +290,13 @@ span {
         font-size: 40px;
         letter-spacing: 10px;
     }
+    .to-wow {
+        font-size: 30px;
+    }
     .down-arrow {
         width: 16%;
     }
     .left-arrow, .right-arrow {
         width: 70%;
-    }
-    span {
-        margin-left: 3.5%;
     }
 }
