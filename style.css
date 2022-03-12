@@ -45,8 +45,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: #000000;
+    color: #FFFFFF;
     width: 12%;
     height: 85%;
     border-radius: 50px;
