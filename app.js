@@ -16,20 +16,20 @@ window.addEventListener('scroll', () => {
 });
 
 backRight.addEventListener('click', () => {
-   mid.style.left = '0';
+   mid.style.transform = 'translateX(0)';
    leftAr.style.left = '-150%';
    rightVr.style.left = '150%';
    backRight.classList.toggle('d-none');
 });
 
 goLeft.addEventListener('click', () => {
-    mid.style.left = '100%';
+    mid.style.transform = 'translateX(100%)';
     leftAr.style.left = '0';
     backRight.classList.toggle('d-none');
 });
 
 goRight.addEventListener('click', () => {
-    mid.style.left = '-100%';
+    mid.style.transform = 'translateX(-100%)';
     rightVr.style.left = '0';
     backRight.classList.toggle('d-none');
 });

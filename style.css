@@ -82,9 +82,7 @@ nav {
 /*middle block*/
 .mid {
     transition: .5s;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     overflow-x: hidden;
 }
@@ -100,7 +98,6 @@ nav {
 
 .first {
     justify-content: space-between;
-    overflow: hidden;
 }
 
 .to-wow {
@@ -124,10 +121,6 @@ nav {
 .logo {
     width: auto;
     height: 40%;
-    /*position: absolute;*/
-    /*z-index: 1000;*/
-    /*top: 35%;*/
-    /*left: 30%;*/
     animation-name: logo;
     animation-duration: .9s;
     animation-timing-function: ease-out;
