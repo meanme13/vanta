@@ -20,19 +20,19 @@ backRight.addEventListener('click', () => {
    leftAr.style.left = '-150%';
    rightVr.style.left = '150%';
    backRight.classList.toggle('d-none');
-   leftAr.classList.toggle('d-none');
-   rightVr.classList.toggle('d-none');
+   leftAr.classList.add('d-none');
+   rightVr.classList.add('d-none');
 });
 
 goLeft.addEventListener('click', () => {
-    leftAr.classList.toggle('d-none');
+    leftAr.classList.remove('d-none');
     mid.style.transform = 'translateX(100%)';
     leftAr.style.left = '0';
     backRight.classList.toggle('d-none');
 });
 
 goRight.addEventListener('click', () => {
-    rightVr.classList.toggle('d-none');
+    rightVr.classList.remove('d-none');
     mid.style.transform = 'translateX(-100%)';
     rightVr.style.left = '0';
     backRight.classList.toggle('d-none');
