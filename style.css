@@ -30,15 +30,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF;
-    color: #000000;
+    /*background-color: aqua;*/
+    /*color: #000000;*/
     width: 12%;
     height: 85%;
     border-radius: 50px;
-    text-decoration: none;
-    font-family: "Arial", sans-serif;
-    font-weight: 700;
-    cursor: pointer;
 }
 
 .backRight {
@@ -58,6 +54,12 @@ nav {
 }
 .d-none {
     display: none;
+}
+
+.social-img {
+    width: 30%;
+    height: auto;
+    cursor: pointer;
 }
 
 /*AR block*/
