@@ -25,6 +25,7 @@ function leftToGo() {
         leftAr.style.left = '0';
         backLeft.innerText = 'vr';
         backRight.innerText = 'feed';
+        mid.classList.add('d-none');
     } else if (leftInner === 'feed') {
         mid.style.transform = 'translateX(0)';
         rightVr.style.left = '150%';
@@ -53,6 +54,7 @@ function rightToGo() {
         backLeft.innerText = 'feed';
         backRight.innerText = 'ar';
     } else if (rightInner === 'feed') {
+        mid.classList.remove('d-none');
         mid.style.transform = 'translateX(0)';
         leftAr.style.left = '-150%';
         backLeft.innerText = 'ar';
@@ -66,6 +68,7 @@ function rightToGo() {
         backLeft.innerText = 'vr';
         backRight.innerText = 'feed';
         rightVr.classList.add('d-none');
+        mid.classList.add('d-none');
     }
 
 }
