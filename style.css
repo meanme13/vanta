@@ -1,11 +1,13 @@
 body {
     background-color: #000000;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
 }
 
 /*navigation*/
 nav {
     position: fixed;
-    top: -10%;
+    top: -30%;
     left: 0;
     width: 100%;
     height: 10vh;
@@ -13,30 +15,18 @@ nav {
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    opacity: .9;
+    justify-content: space-around;
+    opacity: .5;
     transition: .5s;
-}
-
-.show {
-    animation-name: show;
-    animation-duration: 500ms;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
 }
 
 .social {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF;
-    color: #000000;
     width: 15%;
     height: 85%;
-    border-radius: 50px;
     text-decoration: none;
-    font-family: "Arial", sans-serif;
-    font-weight: 700;
     cursor: pointer;
 }
 
@@ -50,7 +40,6 @@ nav {
     height: 85%;
     border-radius: 50px;
     text-decoration: none;
-    font-family: "Arial", sans-serif;
     font-weight: 400;
     cursor: pointer;
     transition: .5s;
@@ -60,7 +49,7 @@ nav {
 }
 
 .social-img {
-    width: 50%;
+    width: 60%;
     height: auto;
 }
 
@@ -103,7 +92,8 @@ nav {
 }
 
 .first {
-    justify-content: space-between;
+    padding-top: 5%;
+    justify-content: flex-start;
 }
 
 .to-wow {
@@ -146,6 +136,8 @@ nav {
 }
 
 .to {
+    position: absolute;
+    bottom: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,7 +145,6 @@ nav {
 
 .meta, .to, .ar, .vr {
     text-align: center;
-    font-family: "Arial", sans-serif;
     font-size: 100px;
     letter-spacing: 15px;
     color: #FFFFFF;
@@ -163,7 +154,7 @@ nav {
 }
 
 .down-arrow {
-    width: 8%;
+    width: 10%;
     animation-name: down-arrow;
     animation-duration: .9s;
     animation-timing-function: ease-out;
@@ -278,7 +269,7 @@ nav {
         font-size: 50px;
     }
     .down-arrow {
-        width: 12%;
+        width: 25%;
     }
     .left-arrow, .right-arrow {
         width: 70%;
@@ -296,7 +287,7 @@ nav {
         font-size: 40px;
     }
     .down-arrow {
-        width: 14%;
+        width: 20%;
     }
     .left-arrow, .right-arrow {
         width: 70%;
@@ -311,7 +302,7 @@ nav {
         font-size: 30px;
     }
     .down-arrow {
-        width: 16%;
+        width: 20%;
     }
     .left-arrow, .right-arrow {
         width: 70%;

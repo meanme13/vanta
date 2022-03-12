@@ -4,38 +4,89 @@ const mid = document.getElementById('mid');
 const goLeft = document.getElementById('goLeft');
 const goRight = document.getElementById('goRight');
 const backRight = document.getElementById('backRight');
+const backLeft = document.getElementById('backLeft');
 const nav = document.getElementById('nav');
 
 window.addEventListener('scroll', () => {
    let y = window.scrollY;
-   if (y >= 300) {
-       nav.style.top = '0';
+   if (y >= 200) {
+       nav.style.top = '-1%';
    } else {
-       nav.style.top = '-10%';
+       nav.style.top = '-30%';
    }
 });
 
-backRight.addEventListener('click', () => {
-   mid.style.transform = 'translateX(0)';
-   leftAr.style.left = '-150%';
-   rightVr.style.left = '150%';
-   backRight.classList.toggle('d-none');
-   leftAr.classList.add('d-none');
-   rightVr.classList.add('d-none');
-});
+function leftToGo() {
+    let leftInner = backLeft.innerText;
+
+    if (leftInner === 'ar') {
+        leftAr.classList.remove('d-none');
+        mid.style.transform = 'translateX(150%)';
+        leftAr.style.left = '0';
+        backLeft.innerText = 'vr';
+        backRight.innerText = 'feed';
+    } else if (leftInner === 'feed') {
+        rightVr.classList.add('d-none');
+        mid.style.transform = 'translateX(0)';
+        rightVr.style.left = '150%';
+        backLeft.innerText = 'ar';
+        backRight.innerText = 'vr';
+    } else if (leftInner === 'vr') {
+        rightVr.classList.remove('d-none');
+        mid.style.transform = 'translateX(-150%)';
+        leftAr.style.left = '-150%';
+        rightVr.style.left = '0';
+        backLeft.innerText = 'feed';
+        backRight.innerText = 'ar';
+        leftAr.classList.add('d-none');
+    }
+
+}
+
+function rightToGo() {
+    let rightInner = backRight.innerText;
+
+    if (rightInner === 'vr') {
+        rightVr.classList.remove('d-none');
+        mid.style.transform = 'translateX(-150%)';
+        rightVr.style.left = '0';
+        backLeft.innerText = 'feed';
+        backRight.innerText = 'ar';
+    } else if (rightInner === 'feed') {
+        mid.style.transform = 'translateX(0)';
+        leftAr.style.left = '-150%';
+        backLeft.innerText = 'ar';
+        backRight.innerText = 'vr';
+        leftAr.classList.add('d-none');
+    } else if (rightInner === 'ar') {
+        leftAr.classList.remove('d-none');
+        mid.style.transform = 'translateX(150%)';
+        leftAr.style.left = '0';
+        rightVr.style.left = '150%';
+        backLeft.innerText = 'vr';
+        backRight.innerText = 'feed';
+        rightVr.classList.add('d-none');
+    }
+
+}
+
+backRight.addEventListener('click', rightToGo);
+backLeft.addEventListener('click', leftToGo);
 
 goLeft.addEventListener('click', () => {
     leftAr.classList.remove('d-none');
     mid.style.transform = 'translateX(100%)';
     leftAr.style.left = '0';
-    backRight.classList.toggle('d-none');
+    backLeft.innerText = 'vr';
+    backRight.innerText = 'feed';
 });
 
 goRight.addEventListener('click', () => {
     rightVr.classList.remove('d-none');
     mid.style.transform = 'translateX(-100%)';
     rightVr.style.left = '0';
-    backRight.classList.toggle('d-none');
+    backLeft.innerText = 'feed';
+    backRight.innerText = 'ar';
 });
 
 // const first = document.getElementById('first');
