@@ -26,11 +26,11 @@ function leftToGo() {
         backLeft.innerText = 'vr';
         backRight.innerText = 'feed';
     } else if (leftInner === 'feed') {
-        rightVr.classList.add('d-none');
         mid.style.transform = 'translateX(0)';
         rightVr.style.left = '150%';
         backLeft.innerText = 'ar';
         backRight.innerText = 'vr';
+        rightVr.classList.add('d-none');
     } else if (leftInner === 'vr') {
         rightVr.classList.remove('d-none');
         mid.style.transform = 'translateX(-150%)';
