@@ -50,6 +50,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
+    <!--vimeo vr video player-->
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body>
 
@@ -166,7 +168,9 @@
 
 <!--    right side feed-->
     <div id="right" class="right d-none">
-        <iframe src="https://player.vimeo.com/video/687522278?h=d917e58e0f" width="100%" height="auto"  allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-block" ">
+            <iframe src="https://player.vimeo.com/video/687522278?h=d917e58e0f&autoplay=1&loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
     <script src="app.js"></script>
