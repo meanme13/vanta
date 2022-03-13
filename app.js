@@ -21,8 +21,8 @@ function leftToGo() {
 
     if (leftInner === 'ar') {
         leftAr.classList.remove('d-none');
-        mid.style.transform = 'translateX(150%)';
         leftAr.style.left = '0';
+        mid.style.transform = 'translateX(150%)';
         backLeft.innerText = 'vr';
         backRight.innerText = 'feed';
         mid.classList.add('d-none');

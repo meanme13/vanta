@@ -81,7 +81,7 @@ nav {
     height: 100vh;
     background-color: #000000;
     transition: .5s;
-    z-index: 3;
+    z-index: 4;
 }
 
 .model {
